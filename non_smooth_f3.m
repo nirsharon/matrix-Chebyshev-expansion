@@ -44,13 +44,15 @@ figure;
 semilogy(1:2:coef_num,abs(coefs(1:2:coef_num)),'--k','LineWidth',4);
 hold on
 semilogy(plot_dom,error_ar,'LineWidth',4);
-xlabel('n');
+%xlabel('n');
 
 set(gcf, 'Position', get(0,'ScreenSize'));
-set(gca,'FontSize',30)
+set(gca,'FontSize',26)
 str1 = '\alpha_n[f] (absolute value)';
 str2 = 'Truncation error (Frobenius)';
 h_legend = legend(str1,str2);
+xlim([plot_dom(1),plot_dom(end)]);
+
 
 if saveit
     saveas(gcf,name_it,'fig');
@@ -69,13 +71,14 @@ plot(0:11,ones(12,1)*(.5),'r');
 y1 = min(spect);
 y2 = max(spect);
 ylim([y1-.1 y2+.1]);
+xlim([0,11]);
 
 
-xlabel('The spectrum of the matrix','FontSize', 30)
+%xlabel('The spectrum of the matrix','FontSize', 26)
 
 set(gca,'LineWidth',1.5);
 set(gcf, 'Position', get(0,'ScreenSize'));
-set(gca,'FontSize',20)
+set(gca,'FontSize',26)
 
 if saveit
     saveas(gcf,name_it_spec,'fig');

@@ -10,7 +10,7 @@ nameit = 'JordanBlocks_diffEV';
 deg  = 3;
 m    = 3;   % convergence guaranteed for m<=deg with lambda<1
 func = @(x) abs(x).^(deg+.5); 
-N    = 2000;
+N    = 1500;
 coef = chebcoefs(func,N);
 
 % % the decay rate of coefficients
@@ -18,7 +18,7 @@ coef = chebcoefs(func,N);
 % hold on; semilogy(1:2:N,(1:2:N).^(-deg-1),'r');
 
 lambda_vals           = [.4, .7, 1];
-number_of_truncations = 16;
+number_of_truncations = 18;
 
 N_sample   = round(linspace(10,N,number_of_truncations));
 error_rate = zeros(number_of_truncations,numel(lambda_vals));
@@ -53,16 +53,17 @@ semilogy(N_sample,error_rate(:,(plotind(1))),'--r','LineWidth',4.5);
 str1 = ['\lambda = ',num2str(lambda_vals(plotind(3)))];
 str2 = ['\lambda = ',num2str(lambda_vals(plotind(2)))];
 str3 = ['\lambda = ',num2str(lambda_vals(plotind(1)))];
+
+set(gca,'FontSize',26)
 h_legend = legend(str1,str2,str3,'Location','best');
  
 
 
 xlabel('Expansion length');
 ylabel('Error (Frobenius norm)');
-set(gca,'FontSize',30)
 set(gcf, 'Position', get(0,'ScreenSize'));
 
-set(h_legend,'FontSize',28);
+%set(h_legend,'FontSize',27);
 
 if saveit
     saveas(gcf,nameit,'fig');

@@ -57,10 +57,10 @@ h_legend = legend(str1,str2,str3);
 
 xlabel('Expansion length');
 ylabel('Error (Frobenius norm)');
-set(gca,'FontSize',30)
+set(gca,'FontSize',26)
 set(gcf, 'Position', get(0,'ScreenSize'));
 
-set(h_legend,'FontSize',28);
+%set(h_legend,'FontSize',27);
 
 if saveit
     saveas(gcf,nameit,'fig');

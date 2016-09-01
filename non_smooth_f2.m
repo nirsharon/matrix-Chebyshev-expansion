@@ -13,7 +13,7 @@ coefs = chebcoefs(f,coef_num);
 coefs(2:2:coef_num) = 0;
 
 % random symmetric matrix
-A = rand(k);
+A = randn(k);
 A = A+A'   ;
 A = A/norm(A,'fro');   % verify spectrum in [-1,1]
 
@@ -43,14 +43,14 @@ semilogy(plot_dom,error_ar,'LineWidth',4);
 % theoretical bound
 offset = plot_dom(2)*error_ar(2);
 semilogy(plot_dom,offset*plot_dom.^(-1),'r','LineWidth',4.5);
-xlabel('n');
+%xlabel('n');
 
 %set(gca,'LineWidth',1.5);
 set(gcf, 'Position', get(0,'ScreenSize'));
-set(gca,'FontSize',30)
+set(gca,'FontSize',26)
 str1 = '\alpha_n[f] (absolute value)';
 str2 = 'Truncation error (Frobenius)';
-str3 = 'theoretical bound of n^{-1}';
+str3 = 'theoretical bound of N^{-1}';
 
 
 h_legend = legend(str1,str2,str3);
