@@ -76,7 +76,7 @@ end
 % results
 res = [Cheb_time , eig_time]
 plot(matrixSizes,res,'LineWidth',4);
-h = legend('Chebyshev','EIG','Location','NorthWest'); %'northoutside','Orientation','horizontal')
+h = legend('Chebyshev','EIGS','Location','NorthWest'); %'northoutside','Orientation','horizontal')
 grid on
 set(gca,'FontSize',27);
 xlabel('Matrix size');
