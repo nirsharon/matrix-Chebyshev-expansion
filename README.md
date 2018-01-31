@@ -34,5 +34,5 @@ JordanDecay2          	      — Figure 3, part 1: Jordan blocks of different si
 JordanDecay_differentEV — Figure 3, part2: Jordan blocks of different eigenvalues;
 MultiplyBlocks                   — Figure 4;
 plot_FilterFunc         		   —  Figure 5, the plot of the filter function;
-EIGvsChebyshev     	      —  Figure 6, the comparison of Chebyshev and EIG;
+EIGvsChebyshev     	      —  Figure 6, the comparison of Chebyshev and EIGs;
 HugeMatrixExample 		   —  generates Table 1;
